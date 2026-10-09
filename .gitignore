@@ -1,0 +1,73 @@
+# ===== Node / npm / pnpm =====
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# ===== Electron / Vite build output =====
+out/
+dist/
+dist-electron/
+release/
+.vite/
+.eslintcache
+
+# ===== Rust =====
+target/
+**/*.rs.bk
+*.pdb
+
+# ===== napi-rs native addon (build artifacts) =====
+*.node
+
+# ===== Env / secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== Logs / tests / coverage =====
+logs/
+*.log
+coverage/
+test-results/
+playwright-report/
+tests/output/
+
+# ===== IDE =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.swp
+
+# ===== OS: Windows =====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ===== OS: macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ===== OS: Linux =====
+*~
+.directory
+.Trash-*
+.fuse_hidden*
+.nfs*
+
+# ===== Temp =====
+*.tmp
+tmp/
+.cache/
