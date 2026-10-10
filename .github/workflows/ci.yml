@@ -1,0 +1,159 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  # never sign / publish from CI (no certificates configured)
+  CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Linux system packages (ALSA headers for cpal, Xvfb for Electron E2E)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev xvfb
+          # Ubuntu 24.04 blocks unprivileged user namespaces, which the Chromium sandbox needs
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: llvm-tools-preview, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install the Electron binary
+        # npm may skip dependency install scripts (allowScripts); this is idempotent
+        run: node node_modules/electron/install.js
+
+      - name: Rust tests
+        run: cargo test --workspace
+
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Build native addon
+        run: npm run build:native
+
+      - name: TypeScript typecheck (main, preload, renderer, e2e)
+        run: npm run typecheck
+
+      - name: Unit tests + i18n parity (Vitest)
+        run: npm test
+
+      - name: Vitest coverage gate (80 % lines)
+        if: runner.os == 'Linux'
+        run: npm run coverage
+
+      - name: Rust coverage gate (80 % lines)
+        if: runner.os == 'Linux'
+        run: |
+          cargo install cargo-llvm-cov --locked
+          cargo llvm-cov --workspace --fail-under-lines 80
+
+      - name: E2E (Playwright + Electron)
+        if: runner.os != 'Linux'
+        run: npm run test:e2e
+
+      - name: E2E (Playwright + Electron, Xvfb)
+        if: runner.os == 'Linux'
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npm run test:e2e
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-${{ matrix.os }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
+  package:
+    name: Package (${{ matrix.os }})
+    needs: test
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            dist: dist:win
+          - os: macos-latest
+            dist: dist:mac
+          - os: ubuntu-latest
+            dist: dist:linux
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Linux system packages
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev xvfb
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: node node_modules/electron/install.js
+
+      - name: Build native addon (release)
+        run: npm run build:native
+
+      - name: Build installer
+        run: npm run ${{ matrix.dist }}
+
+      - name: Smoke test the packaged app (E2E against release/*-unpacked)
+        if: runner.os != 'Linux'
+        run: npm run test:e2e:packaged
+
+      - name: Smoke test the packaged app (Xvfb)
+        if: runner.os == 'Linux'
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npm run test:e2e:packaged
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ matrix.os }}
+          path: |
+            release/*.exe
+            release/*.dmg
+            release/*.AppImage
+            release/*.deb
+          if-no-files-found: error

@@ -1,0 +1,113 @@
+{
+  "title": "Export audio",
+  "fields": {
+    "format": "Format",
+    "sampleRate": "Sample rate",
+    "channels": "Channels",
+    "bitDepth": "Bit depth",
+    "dither": "Dither",
+    "bitrateMode": "Bitrate mode",
+    "bitrate": "Bitrate",
+    "vbrQuality": "VBR quality",
+    "resampleQuality": "Resample quality",
+    "fileName": "File name"
+  },
+  "hints": {
+    "format": "WAV/AIFF/FLAC are lossless; MP3/OGG are lossy and much smaller.",
+    "sampleRate": "Samples per second. Lower rates make smaller files but remove high frequencies (max frequency = rate / 2).",
+    "channels": "Source keeps the project channels. Mono halves the size and is ideal for 3D/positional SFX.",
+    "bitDepth": "16-bit is CD quality and enough for games; 24-bit for masters and further editing.",
+    "dither": "Adds very low noise when reducing bit depth to avoid quantization distortion on quiet sounds.",
+    "bitrateMode": "CBR: constant bitrate (predictable size). VBR: quality-based, usually smaller for the same quality.",
+    "bitrate": "Higher bitrate = better quality and bigger file. 128–192 kbps is good for music, 64 kbps for voice.",
+    "vbrQuality": "0 = smallest file, 1 = best quality.",
+    "resampleQuality": "Quality of the sample-rate conversion. Best is slower but cleanest.",
+    "fileName": "Only a suggestion: you choose the final folder and name in the save dialog.",
+    "askLocation": "You will choose where to save before anything is written.",
+    "oggAbr": "OGG Vorbis uses an average bitrate (ABR) in this mode."
+  },
+  "formats": {
+    "wav": "WAV",
+    "aiff": "AIFF",
+    "flac": "FLAC",
+    "mp3": "MP3",
+    "ogg": "OGG"
+  },
+  "formatHint": {
+    "wav": "Uncompressed, universal (lossless).",
+    "aiff": "Uncompressed, Apple standard (lossless).",
+    "flac": "Compressed lossless, about 50–60 % of WAV.",
+    "mp3": "Lossy, universally supported.",
+    "ogg": "Lossy Vorbis, great for games (Unity, Godot, Unreal)."
+  },
+  "sampleRate": {
+    "keep": "Keep ({{rate}})",
+    "keepHint": "Use the project sample rate (highest among the tracks)."
+  },
+  "sampleRateHint": {
+    "8000": "Telephone quality, voice only",
+    "11025": "Lo-fi / retro SFX",
+    "12000": "Low-quality voice",
+    "16000": "Speech, voice chat",
+    "22050": "Recommended for mobile SFX",
+    "24000": "Voice, simple SFX",
+    "32000": "FM-radio quality",
+    "44100": "Recommended for music (CD quality)",
+    "48000": "Recommended for video / game engines",
+    "96000": "Hi-res master / archive"
+  },
+  "channels": {
+    "source": "Source",
+    "mono": "Mono",
+    "stereo": "Stereo"
+  },
+  "bitDepth": {
+    "16": "16-bit",
+    "24": "24-bit",
+    "32": "32-bit",
+    "32f": "32-bit float"
+  },
+  "bitrateMode": {
+    "cbr": "CBR",
+    "vbr": "VBR"
+  },
+  "kbps": "{{value}} kbps",
+  "resampleQuality": {
+    "fast": "Fast",
+    "balanced": "Balanced",
+    "best": "Best"
+  },
+  "validation": {
+    "bitDepth": "Unsupported bit depth ({{value}}). Use 16, 24 or 32.",
+    "vbrQuality": "VBR quality must be between 0 and 1.",
+    "sampleRate": "Sample rate {{value}} Hz is out of range (4000–384000 Hz).",
+    "mp3SampleRate": "MP3 does not support {{value}} Hz. Choose 8–48 kHz from the list.",
+    "mp3Bitrate": "MP3 does not support {{value}} kbps. Choose a standard bitrate.",
+    "mp3Channels": "MP3 supports at most 2 channels.",
+    "oggBitrate": "OGG bitrate {{value}} kbps is out of range (32–500 kbps)."
+  },
+  "estimate": {
+    "label": "Estimated file size",
+    "loading": "estimating…",
+    "unavailable": "-"
+  },
+  "emptyProject": "There is no audio to export yet. Add a file first.",
+  "actions": {
+    "open": "Export",
+    "export": "Export…",
+    "cancel": "Cancel",
+    "close": "Close",
+    "done": "Done",
+    "exportAgain": "Export another",
+    "tryAgain": "Try again"
+  },
+  "status": {
+    "exporting": "Rendering and writing the file…",
+    "canceled": "Export canceled: nothing was saved.",
+    "success": "Export complete",
+    "savedTo": "Saved to:",
+    "bytes": "{{size}} ({{bytes}} bytes)",
+    "error": "Export failed",
+    "unknownError": "An unexpected error occurred."
+  }
+}

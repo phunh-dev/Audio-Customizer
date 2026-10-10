@@ -1,0 +1,63 @@
+# electron-builder config: `npm run dist` (current OS) / dist:win / dist:mac / dist:linux.
+# Prerequisites: `npm run build:native` (native/audio_napi.node) and `npm run build` (out/).
+# The packaged app loads the engine from <resources>/native/audio_napi.node
+# (src/main/native.ts resolveAddonPath) and the window icon from
+# <resources>/icons/256x256.png (src/main/windowOptions.ts resolveIconPath).
+appId: com.audiocustomizer.app
+productName: Audio Customizer
+copyright: Copyright © 2026 Audio Customizer
+directories:
+  output: release
+  buildResources: build
+files:
+  - out/**
+  - package.json
+  - "!**/*.map"
+  # Everything the main process needs at runtime is bundled into out/ by
+  # electron-vite; no runtime node_modules are required.
+  - "!node_modules/**"
+# IMPORTANT: the native addon must NOT be inside app.asar (a .node file cannot
+# be dlopen()ed from an archive). It ships as an extra resource next to it.
+extraResources:
+  - from: native/audio_napi.node
+    to: native/audio_napi.node
+  - from: build/icons/256x256.png
+    to: icons/256x256.png
+asar: true
+# Rust builds the addon ourselves; never let electron-builder try to rebuild it.
+npmRebuild: false
+nodeGypRebuild: false
+
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerHeaderIcon: build/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext}
+
+mac:
+  icon: build/icon.png
+  category: public.app-category.music
+  # The native addon is built for the runner's architecture, so the dmg is too.
+  target:
+    - target: dmg
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+linux:
+  icon: build/icons
+  category: Audio
+  synopsis: Desktop audio asset editor
+  maintainer: Audio Customizer <noreply@audiocustomizer.app>
+  target:
+    - AppImage
+    - deb
+  artifactName: ${productName}-${version}-${arch}.${ext}

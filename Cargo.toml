@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["crates/audio-core", "crates/audio-napi"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+# DSP code is far too slow unoptimized; keep tests usable.
+[profile.dev]
+opt-level = 2
+
+[profile.test]
+opt-level = 2

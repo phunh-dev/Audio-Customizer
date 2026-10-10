@@ -1,0 +1,33 @@
+{
+  "title": "Tracks",
+  "empty": "No tracks yet. Drop audio files here or use Open files.",
+  "mono": "Mono",
+  "stereo": "Stereo",
+  "channels": "{{count}} ch",
+  "mute": "Mute",
+  "unmute": "Unmute",
+  "solo": "Solo",
+  "remove": "Remove {{name}}",
+  "removeHint": "Remove track (can be undone)",
+  "format": "Format",
+  "sampleRate": "Sample rate",
+  "channelsLabel": "Channels",
+  "duration": "Duration",
+  "size": "File size",
+  "bitDepth": "Bit depth",
+  "hz": "{{value}} Hz",
+  "bits": "{{value}}-bit",
+  "inspector": {
+    "title": "Clip",
+    "gain": "Gain",
+    "pan": "Pan (L-100 .. R+100)",
+    "offset": "Position",
+    "clipStart": "Clip start",
+    "clipEnd": "Clip end",
+    "fadeIn": "Fade in",
+    "fadeOut": "Fade out",
+    "curve": "Fade curve",
+    "collapse": "Hide clip settings",
+    "expand": "Show clip settings (gain, pan, position, trim, fades)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ERR_FILE_NOT_FOUND": "Không tìm thấy tệp",
+  "ERR_UNSUPPORTED_FORMAT": "Định dạng âm thanh không được hỗ trợ",
+  "ERR_DECODE_FAILED": "Không thể giải mã tệp âm thanh",
+  "ERR_ENCODE_FAILED": "Không thể mã hóa âm thanh",
+  "ERR_INVALID_PARAM": "Thông số không hợp lệ",
+  "ERR_IO": "Không thể đọc hoặc ghi tệp",
+  "ERR_NO_AUDIO_DEVICE": "Không có thiết bị phát âm thanh",
+  "ERR_SOURCE_NOT_LOADED": "Nguồn âm thanh chưa được tải",
+  "ERR_SESSION_NOT_FOUND": "Không tìm thấy phiên làm việc",
+  "ERR_EMPTY_PROJECT": "Dự án không có track nào phát được",
+  "ERR_UNKNOWN": "Đã xảy ra lỗi"
+}

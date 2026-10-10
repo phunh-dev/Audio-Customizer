@@ -1,0 +1,67 @@
+{
+  "name": "Audio Customizer",
+  "dismiss": "Dismiss",
+  "tabs": {
+    "label": "Sessions",
+    "defaultName": "Session {{n}}",
+    "new": "New tab",
+    "close": "Close {{name}}",
+    "rename": "Rename tab",
+    "sleeping": "Sleeping",
+    "sleepingHint": "This tab is asleep to save memory. Click to wake it up.",
+    "loading": "Loading",
+    "waking": "Waking the tab up and reloading audio..."
+  },
+  "toolbar": {
+    "openFiles": "Open files",
+    "openFolder": "Open folder",
+    "undo": "Undo",
+    "redo": "Redo",
+    "split": "Split at playhead",
+    "trim": "Trim to selection",
+    "deleteRegion": "Delete selected region (ripple)",
+    "arrange": "Join",
+    "arrangeHint": "Place all tracks one after another (concatenate) with a gap or crossfade",
+    "lightTheme": "Switch to light theme",
+    "darkTheme": "Switch to dark theme"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "vi": "Vietnamese",
+    "short": {
+      "en": "EN",
+      "vi": "VI"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sleepMinutes": "Sleep inactive tabs after",
+    "sleepHint": "Inactive tabs release their audio memory and reload when you open them again.",
+    "snap": "Snap clips to edges and playhead",
+    "colormap": "Spectrogram colours",
+    "colormapMagma": "Magma",
+    "colormapInferno": "Inferno"
+  },
+  "units": {
+    "min": "min",
+    "ms": "ms",
+    "s": "s",
+    "db": "dB"
+  },
+  "arrange": {
+    "title": "Join tracks",
+    "description": "Tracks are placed end to end in list order. A crossfade overlaps neighbouring tracks with matching fades.",
+    "gap": "Silence between",
+    "crossfade": "Crossfade",
+    "curve": "Fade curve",
+    "apply": "Join tracks"
+  },
+  "curves": {
+    "linear": "Linear",
+    "exponential": "Exponential",
+    "logarithmic": "Logarithmic",
+    "sCurve": "S-curve",
+    "equalPower": "Equal power"
+  }
+}

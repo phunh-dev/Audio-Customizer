@@ -1,0 +1,24 @@
+{
+  "title": "Transport",
+  "play": "Play",
+  "pause": "Pause",
+  "stop": "Stop",
+  "space": "Space",
+  "loop": "Loop playback",
+  "stepBack": "Step back",
+  "stepForward": "Step forward",
+  "stepUnit": "Step",
+  "position": "Position",
+  "duration": "Duration",
+  "sampleRateValue": "{{value}} Hz",
+  "units": {
+    "sample": "1 sample",
+    "ms1": "1 ms",
+    "ms10": "10 ms",
+    "ms100": "100 ms",
+    "s1": "1 second",
+    "frame24": "1 frame @ 24 fps",
+    "frame30": "1 frame @ 30 fps",
+    "frame60": "1 frame @ 60 fps"
+  }
+}

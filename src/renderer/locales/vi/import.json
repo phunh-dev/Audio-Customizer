@@ -1,0 +1,11 @@
+{
+  "title": "Thả tệp hoặc thư mục âm thanh vào đây",
+  "instructions": "Kéo một hoặc nhiều tệp, hoặc cả thư mục, vào bất kỳ đâu trên cửa sổ. Mỗi tab là một phiên làm việc riêng.",
+  "dropNow": "Thả ra để thêm tệp âm thanh",
+  "supported": "Hỗ trợ: {{formats}}",
+  "noSupportedFiles": "Không tìm thấy tệp âm thanh được hỗ trợ",
+  "tipDrag": "Kéo clip trên các làn để trộn",
+  "tipSpace": "Phím cách để phát / tạm dừng",
+  "tipZoom": "Ctrl + cuộn chuột để phóng to dòng thời gian",
+  "tipUndo": "Ctrl+Z hoàn tác mọi thay đổi"
+}
