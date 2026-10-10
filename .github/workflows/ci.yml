@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'feature/**']
     tags: ['v*']
   pull_request:
   workflow_dispatch:
@@ -99,7 +99,8 @@ jobs:
   package:
     name: Package (${{ matrix.os }})
     needs: test
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.ref, 'refs/tags/')
+    # Installers for every push (main, feature branches, tags) and manual runs; PRs only run tests.
+    if: github.event_name != 'pull_request'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
