@@ -1,3 +1,4 @@
+import { realpathSync } from 'node:fs';
 import { join } from 'node:path';
 import { expect, launchApp, sessionTabs, test } from './fixtures';
 
@@ -48,7 +49,9 @@ test.describe('app shell', () => {
 
   test('isolates user data per test run', async ({ app, tmp }) => {
     const userData = await app.evaluate(({ app: a }) => a.getPath('userData'));
-    expect(userData.toLowerCase()).toBe(join(tmp, 'user-data').toLowerCase());
+    // realpath: on macOS the temp dir /var/... is a symlink to /private/var/...
+    const real = (p: string): string => realpathSync.native(p).toLowerCase();
+    expect(real(userData)).toBe(real(join(tmp, 'user-data')));
   });
 
   test('title bar overlay follows the theme', async ({ app, page }) => {
