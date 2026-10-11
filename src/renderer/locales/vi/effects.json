@@ -1,0 +1,228 @@
+{
+  "ui": {
+    "about": "Giới thiệu {{name}}",
+    "resetSection": "Đặt lại {{name}} về mặc định",
+    "enableSection": "Bật {{name}}",
+    "offHint": "Hiệu ứng đang tắt nên chưa nghe thấy. Bật lên, hoặc chỉ cần chỉnh một giá trị.",
+    "turnOn": "Bật"
+  },
+  "panel": {
+    "title": "Hiệu ứng",
+    "tabs": "Các nhóm hiệu ứng",
+    "activeEffect": "Đang bật",
+    "masterOnly": "Chỉ dùng được cho đầu ra Master",
+    "editingTrack": "Đang chỉnh track \"{{name}}\". Chọn Master để chỉnh âm thanh sau khi trộn."
+  },
+  "target": {
+    "label": "Đối tượng",
+    "master": "Master (đầu ra đã trộn)",
+    "track": "Track: {{name}}"
+  },
+  "tabs": {
+    "volume": "Âm lượng",
+    "pitchTempo": "Cao độ & Tốc độ",
+    "filters": "Bộ lọc",
+    "eq": "EQ",
+    "denoise": "Khử nhiễu",
+    "loop": "Loop",
+    "optimize": "Tối ưu"
+  },
+  "curves": {
+    "linear": "Tuyến tính",
+    "exponential": "Hàm mũ",
+    "logarithmic": "Logarit",
+    "sCurve": "Đường cong S",
+    "equalPower": "Công suất đều"
+  },
+  "volume": {
+    "title": "Âm lượng",
+    "description": "Tăng/giảm âm lượng, chuẩn hóa độ lớn và bộ giới hạn an toàn. Được áp dụng cuối cùng trong chuỗi hiệu ứng.",
+    "gain": "Độ lợi",
+    "gainHint": "Mức khuếch đại tính bằng decibel. +6 dB tăng gấp đôi biên độ, -6 dB giảm một nửa. Nhấp đúp để đặt lại.",
+    "normalize": "Chuẩn hóa",
+    "normalizeHint": "Peak: chỉnh để mẫu lớn nhất đạt mức mục tiêu (dBFS). LUFS: khớp độ to cảm nhận (EBU R128).",
+    "normalizeModes": {
+      "off": "Tắt",
+      "peak": "Peak",
+      "lufs": "LUFS"
+    },
+    "peakTarget": "Mức đỉnh mục tiêu",
+    "peakTargetHint": "Mức của mẫu lớn nhất sau khi chuẩn hóa, tính bằng dBFS (0 = mức tối đa). -1 dBFS chừa khoảng an toàn cho bộ mã hóa nén.",
+    "lufsTarget": "Độ to mục tiêu",
+    "lufsTargetHint": "Độ to tích hợp sau khi chuẩn hóa. Thường dùng: -14 LUFS (streaming/di động), -16 LUFS (podcast), -23 LUFS (phát sóng).",
+    "limiter": "Bộ giới hạn",
+    "limiterHint": "Không bao giờ để tín hiệu vượt quá mức trần (không bị vỡ tiếng).",
+    "ceiling": "Mức trần",
+    "ceilingHint": "Mức đầu ra tối đa, tính bằng dB true peak.",
+    "release": "Thời gian nhả",
+    "releaseHint": "Tốc độ bộ giới hạn hồi lại sau khi nén một đỉnh. Ngắn = to hơn nhưng có thể bị 'thở', dài = mượt hơn.",
+    "meter": "Đầu ra: đỉnh {{peak}} · độ to {{lufs}}"
+  },
+  "pitchTempo": {
+    "title": "Cao độ & Tốc độ",
+    "description": "Thay đổi cao độ (bán cung + cent) và tốc độ độc lập với nhau, hoặc cùng lúc như băng từ.",
+    "semitones": "Bán cung",
+    "cents": "Cent",
+    "tempo": "Tốc độ",
+    "tempoHint": "Tốc độ phát theo phần trăm. 50 % = dài gấp đôi, 200 % = ngắn còn một nửa.",
+    "tempoPresets": "Tốc độ có sẵn",
+    "mode": "Chế độ",
+    "modes": {
+      "stretch": "Giữ cao độ",
+      "varispeed": "Varispeed"
+    },
+    "modeHint": {
+      "stretch": "Co giãn thời gian: tốc độ chỉ đổi độ dài, cao độ giữ nguyên (cao độ do bán cung/cent quyết định).",
+      "varispeed": "Kiểu băng từ: tốc độ đổi cả nhịp lẫn cao độ (nhanh hơn = cao hơn), bán cung/cent được cộng thêm."
+    },
+    "summary": "Kết quả: cao độ ×{{pitch}} · độ dài ×{{length}}"
+  },
+  "filters": {
+    "title": "Bộ lọc",
+    "description": "Bộ lọc thông cao, thông thấp, thông dải, chặn dải và shelf. Các bộ lọc được áp dụng theo thứ tự.",
+    "add": "Thêm bộ lọc",
+    "curve": "Đáp ứng tần số tổng của các bộ lọc",
+    "empty": "Chưa có bộ lọc nào. Bấm \"Thêm bộ lọc\" (ví dụ thông cao 80 Hz để loại tiếng ù).",
+    "bandName": "Bộ lọc {{index}} ({{type}})",
+    "enableBand": "Bật {{name}}",
+    "type": "Loại bộ lọc",
+    "types": {
+      "highpass": "Thông cao",
+      "lowpass": "Thông thấp",
+      "bandpass": "Thông dải",
+      "notch": "Chặn dải hẹp",
+      "lowshelf": "Shelf trầm",
+      "highshelf": "Shelf cao"
+    },
+    "typeHints": {
+      "highpass": "Loại bỏ tần số dưới điểm cắt (tiếng ù, gió, rè điện).",
+      "lowpass": "Loại bỏ tần số trên điểm cắt (tiếng xì, chói).",
+      "bandpass": "Chỉ giữ một dải quanh tần số trung tâm.",
+      "notch": "Cắt một dải rất hẹp (ví dụ tiếng ù điện 50/60 Hz).",
+      "lowshelf": "Tăng hoặc giảm toàn bộ phần dưới tần số.",
+      "highshelf": "Tăng hoặc giảm toàn bộ phần trên tần số."
+    },
+    "remove": "Xóa {{name}}",
+    "freq": "Tần số",
+    "freqHint": "Tần số cắt / trung tâm (thang logarit). Có thể gõ giá trị như 2.5k.",
+    "q": "Q",
+    "qHint": "Độ cộng hưởng / độ rộng dải. 0.707 = phẳng (Butterworth); cao hơn = hẹp và cộng hưởng hơn.",
+    "qFixedHint": "Với độ dốc 24/48 dB/oct, bộ lọc dùng các tầng Butterworth nên Q cố định.",
+    "slope": "Độ dốc",
+    "slopeHint": "Độ dốc của bộ lọc: 12 dB/oct là nhẹ, 48 dB/oct là rất dốc.",
+    "slopeValue": "{{value}} dB/oct",
+    "gain": "Độ lợi",
+    "gainHint": "Mức tăng hoặc giảm của shelf tính bằng dB."
+  },
+  "eq": {
+    "title": "Bộ cân bằng (16 dải)",
+    "description": "Bộ cân bằng đồ họa 16 dải, ±18 dB mỗi dải. Nhấp vào một thanh trượt để chỉnh Q. Vùng màu nền là phổ của đầu ra.",
+    "preset": "Mẫu cài sẵn",
+    "presets": {
+      "flat": "Phẳng",
+      "bassBoost": "Tăng bass",
+      "trebleBoost": "Tăng treble",
+      "vocalPresence": "Làm rõ giọng",
+      "loFi": "Lo-fi",
+      "telephone": "Điện thoại",
+      "custom": "Tùy chỉnh"
+    },
+    "curve": "Đáp ứng tần số của bộ cân bằng",
+    "bands": "Các dải của bộ cân bằng",
+    "bandGain": "Độ lợi tại {{freq}}",
+    "bandQ": "Q tại {{freq}}",
+    "selectedBand": "Dải {{freq}}",
+    "qHint": "Q càng cao thì dải càng hẹp.",
+    "gain": "Độ lợi",
+    "q": "Q",
+    "resetBand": "Đặt lại dải {{freq}}"
+  },
+  "denoise": {
+    "title": "Khử nhiễu",
+    "description": "Loại bỏ tiếng ồn nền ổn định (xì, ù, quạt). Để tốt nhất, hãy học mẫu nhiễu từ một vùng chỉ có nhiễu.",
+    "mode": "Thuật toán",
+    "modes": {
+      "spectral": "Cổng phổ",
+      "rnnoise": "RNNoise (giọng nói)"
+    },
+    "modeHint": {
+      "spectral": "Đa dụng: dùng được cho mọi loại âm thanh, sử dụng mẫu nhiễu và tất cả thông số bên dưới.",
+      "rnnoise": "Mạng nơ-ron tối ưu cho giọng nói. Tốt nhất cho hội thoại và lồng tiếng; Mức giảm điều khiển cường độ."
+    },
+    "reduction": "Mức giảm",
+    "reductionHint": "Nhiễu được giảm bao nhiêu. Giảm quá nhiều có thể nghe như tiếng dưới nước.",
+    "sensitivity": "Độ nhạy",
+    "sensitivityHint": "Âm thanh phải cao hơn nền nhiễu bao nhiêu thì được giữ lại. Cao hơn = khử nhiều hơn nhưng có thể mất chi tiết nhỏ.",
+    "smoothing": "Làm mượt tần số",
+    "smoothingHint": "Làm mượt mức giảm giữa các tần số lân cận để tránh hiện tượng 'nhiễu âm nhạc'.",
+    "attack": "Thời gian tác động",
+    "release": "Thời gian nhả",
+    "profile": "Mẫu nhiễu",
+    "profileHint": "Chọn trên timeline một đoạn chỉ có nhiễu, rồi bấm Học.",
+    "profileRange": "{{start}} – {{end}}",
+    "profileAuto": "Tự động (ước lượng)",
+    "learn": "Học từ vùng chọn",
+    "clearProfile": "Xóa",
+    "needSelection": "Hãy chọn trước một vùng chỉ có nhiễu trên timeline."
+  },
+  "loop": {
+    "title": "Loop liền mạch",
+    "description": "Nối đuôi với đầu bằng crossfade để âm thanh lặp lại không bị tiếng tách.",
+    "crossfade": "Crossfade",
+    "crossfadeHint": "Độ dài đoạn chồng lên nhau giữa đuôi và đầu. Đầu ra sẽ ngắn đi đúng bằng khoảng này.",
+    "curve": "Đường cong crossfade",
+    "curveHint": "Công suất đều giữ độ to ổn định với chất liệu khác nhau (nhạc, âm nền); tuyến tính hợp với chất liệu giống nhau.",
+    "region": "Vùng loop",
+    "regionHint": "Phần của bản trộn dùng để tạo loop. Chọn một vùng trên timeline rồi bấm \"Dùng vùng chọn\".",
+    "whole": "Toàn bộ đầu ra",
+    "regionRange": "{{start}} – {{end}}",
+    "begin": "đầu",
+    "end": "cuối",
+    "fromSelection": "Dùng vùng chọn",
+    "useWhole": "Toàn bộ đầu ra",
+    "zeroCrossing": "Bám điểm giao không",
+    "zeroCrossingHint": "Dời điểm loop đến điểm giao không gần nhất để tránh tiếng tách.",
+    "matchLoudness": "Cân bằng độ to",
+    "matchLoudnessHint": "San đều mức âm lượng ở đầu và cuối để không nghe thấy chỗ nối.",
+    "hint": "Mẹo: bật phát lặp (Loop) trên thanh điều khiển để nghe đi nghe lại chỗ nối."
+  },
+  "optimize": {
+    "presetsTitle": "Mẫu nhanh",
+    "presetsDescription": "Một cú nhấp để đặt định dạng, tần số lấy mẫu, số kênh và chất lượng cho các nhu cầu âm thanh game phổ biến.",
+    "presets": {
+      "sfxMobile": {
+        "name": "SFX di động",
+        "detail": "OGG · 22.05 kHz · mono · q0.4 · cắt khoảng lặng"
+      },
+      "bgm": {
+        "name": "Nhạc nền (BGM)",
+        "detail": "OGG · 44.1 kHz · stereo · q0.6"
+      },
+      "voice": {
+        "name": "Giọng nói / hội thoại",
+        "detail": "MP3 · 22.05 kHz · mono · 64 kbps"
+      },
+      "losslessMaster": {
+        "name": "Bản master lossless",
+        "detail": "FLAC · 48 kHz · 24-bit"
+      }
+    },
+    "outputTitle": "Định dạng & dung lượng đầu ra",
+    "outputDescription": "Các thiết lập này được dùng khi Xuất. Tần số lấy mẫu thấp hơn, mono và định dạng nén giúp file nhỏ hơn nhiều.",
+    "preview": "Nghe thử với thiết lập xuất",
+    "previewHint": "Phát và hiển thị âm thanh đúng như khi xuất (đổi tần số lấy mẫu, gộp kênh, mã hóa).",
+    "sourceSize": "File nguồn",
+    "beforeSize": "Trước (WAV 16-bit)",
+    "afterSize": "Sau (thiết lập hiện tại)",
+    "estimating": "đang ước tính…",
+    "noAudio": "Thêm âm thanh để xem ước tính dung lượng."
+  },
+  "trimSilence": {
+    "title": "Cắt khoảng lặng",
+    "description": "Loại bỏ khoảng lặng ở đầu và cuối đầu ra (file nhỏ hơn, SFX khớp thời điểm hơn).",
+    "threshold": "Ngưỡng",
+    "thresholdHint": "Mọi âm thanh nhỏ hơn mức này được coi là khoảng lặng.",
+    "pad": "Đệm",
+    "padHint": "Khoảng lặng được giữ lại trước âm thanh đầu tiên và sau âm thanh cuối cùng."
+  }
+}

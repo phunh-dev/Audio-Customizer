@@ -1,0 +1,33 @@
+{
+  "title": "Track",
+  "empty": "Chưa có track. Kéo thả tệp âm thanh vào đây hoặc dùng Mở tệp.",
+  "mono": "Mono",
+  "stereo": "Stereo",
+  "channels": "{{count}} kênh",
+  "mute": "Tắt tiếng",
+  "unmute": "Bật tiếng",
+  "solo": "Solo",
+  "remove": "Xóa {{name}}",
+  "removeHint": "Xóa track (có thể hoàn tác)",
+  "format": "Định dạng",
+  "sampleRate": "Tần số lấy mẫu",
+  "channelsLabel": "Số kênh",
+  "duration": "Độ dài",
+  "size": "Dung lượng",
+  "bitDepth": "Độ sâu bit",
+  "hz": "{{value}} Hz",
+  "bits": "{{value}} bit",
+  "inspector": {
+    "title": "Clip",
+    "gain": "Độ lợi",
+    "pan": "Cân bằng (T-100 .. P+100)",
+    "offset": "Vị trí",
+    "clipStart": "Điểm đầu clip",
+    "clipEnd": "Điểm cuối clip",
+    "fadeIn": "Fade vào",
+    "fadeOut": "Fade ra",
+    "curve": "Đường cong fade",
+    "collapse": "Ẩn thiết lập clip",
+    "expand": "Hiện thiết lập clip (gain, pan, vị trí, cắt, fade)"
+  }
+}

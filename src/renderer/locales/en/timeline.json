@@ -1,0 +1,23 @@
+{
+  "title": "Timeline",
+  "spectrogram": "Spectrogram of the final result",
+  "masterWaveform": "Waveform of the final result",
+  "master": "Master",
+  "finalResult": "Final output",
+  "rendering": "Rendering",
+  "noRender": "The spectrum appears here after rendering",
+  "peak": "Peak level",
+  "peakValue": "Peak {{value}} dB",
+  "loudness": "Integrated loudness",
+  "lufsValue": "{{value}} LUFS",
+  "seek": "Timeline: click or drag to seek",
+  "clip": "Clip {{name}}",
+  "dragHint": "Drag to move the clip in time (hold Alt to disable snapping)",
+  "zoomIn": "Zoom in (Ctrl + wheel)",
+  "zoomOut": "Zoom out (Ctrl + wheel)",
+  "fit": "Fit whole project",
+  "scroll": "Scroll timeline",
+  "zoomValue": "{{value}} px/s",
+  "clippingHint": "The final output goes above 0 dBFS and will clip. Lower the gain or enable the limiter / normalize (Volume tab, Master).",
+  "lanesHint": "Drag a clip to move it in time · click the ruler to seek · drag across the spectrum to select a region (trim, delete, loop, noise profile)"
+}

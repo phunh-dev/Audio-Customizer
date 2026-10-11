@@ -1,0 +1,228 @@
+{
+  "ui": {
+    "about": "About {{name}}",
+    "resetSection": "Reset {{name}} to defaults",
+    "enableSection": "Enable {{name}}",
+    "offHint": "This effect is off and not heard. Turn it on, or just change a value.",
+    "turnOn": "Turn on"
+  },
+  "panel": {
+    "title": "Effects",
+    "tabs": "Effect sections",
+    "activeEffect": "Active",
+    "masterOnly": "Only available on the Master output",
+    "editingTrack": "Editing track \"{{name}}\". Choose Master to edit the mixed output."
+  },
+  "target": {
+    "label": "Target",
+    "master": "Master (mixed output)",
+    "track": "Track: {{name}}"
+  },
+  "tabs": {
+    "volume": "Volume",
+    "pitchTempo": "Pitch & Tempo",
+    "filters": "Filters",
+    "eq": "EQ",
+    "denoise": "Denoise",
+    "loop": "Loop",
+    "optimize": "Optimize"
+  },
+  "curves": {
+    "linear": "Linear",
+    "exponential": "Exponential",
+    "logarithmic": "Logarithmic",
+    "sCurve": "S-curve",
+    "equalPower": "Equal power"
+  },
+  "volume": {
+    "title": "Volume",
+    "description": "Gain, loudness normalization and a safety limiter. Applied last in the effect chain.",
+    "gain": "Gain",
+    "gainHint": "Amplification in decibels. +6 dB doubles the amplitude, -6 dB halves it. Double-click to reset.",
+    "normalize": "Normalize",
+    "normalizeHint": "Peak: scales so the loudest sample hits the target (dBFS). LUFS: matches perceived loudness (EBU R128).",
+    "normalizeModes": {
+      "off": "Off",
+      "peak": "Peak",
+      "lufs": "LUFS"
+    },
+    "peakTarget": "Peak target",
+    "peakTargetHint": "Level of the loudest sample after normalizing, in dBFS (0 = full scale). -1 dBFS leaves headroom for lossy encoders.",
+    "lufsTarget": "Loudness target",
+    "lufsTargetHint": "Integrated loudness after normalizing. Typical: -14 LUFS (streaming/mobile), -16 LUFS (podcast), -23 LUFS (broadcast).",
+    "limiter": "Limiter",
+    "limiterHint": "Prevents the signal from ever exceeding the ceiling (no clipping).",
+    "ceiling": "Ceiling",
+    "ceilingHint": "Maximum output level in dB true peak.",
+    "release": "Release",
+    "releaseHint": "How fast the limiter recovers after reducing a peak. Short = louder but may pump, long = smoother.",
+    "meter": "Output: peak {{peak}} · loudness {{lufs}}"
+  },
+  "pitchTempo": {
+    "title": "Pitch & Tempo",
+    "description": "Change pitch (semitones + cents) and speed independently, or together like a tape.",
+    "semitones": "Semitones",
+    "cents": "Cents",
+    "tempo": "Tempo",
+    "tempoHint": "Playback speed in percent. 50 % = twice as long, 200 % = half as long.",
+    "tempoPresets": "Tempo presets",
+    "mode": "Mode",
+    "modes": {
+      "stretch": "Keep pitch",
+      "varispeed": "Varispeed"
+    },
+    "modeHint": {
+      "stretch": "Time-stretch: tempo changes the length only, pitch stays the same (pitch is set by semitones/cents).",
+      "varispeed": "Tape-style: tempo changes both speed and pitch together (faster = higher), semitones/cents are added on top."
+    },
+    "summary": "Result: pitch ×{{pitch}} · length ×{{length}}"
+  },
+  "filters": {
+    "title": "Filters",
+    "description": "High-pass, low-pass, band-pass, notch and shelving filters. Bands are applied in order.",
+    "add": "Add filter",
+    "curve": "Combined filter frequency response",
+    "empty": "No filter yet. Click \"Add filter\" (e.g. a high-pass at 80 Hz removes rumble).",
+    "bandName": "Filter {{index}} ({{type}})",
+    "enableBand": "Enable {{name}}",
+    "type": "Filter type",
+    "types": {
+      "highpass": "High-pass",
+      "lowpass": "Low-pass",
+      "bandpass": "Band-pass",
+      "notch": "Notch",
+      "lowshelf": "Low shelf",
+      "highshelf": "High shelf"
+    },
+    "typeHints": {
+      "highpass": "Removes frequencies below the cutoff (rumble, wind, hum).",
+      "lowpass": "Removes frequencies above the cutoff (hiss, harshness).",
+      "bandpass": "Keeps only a band around the center frequency.",
+      "notch": "Cuts a narrow band (e.g. 50/60 Hz hum).",
+      "lowshelf": "Boosts or cuts everything below the frequency.",
+      "highshelf": "Boosts or cuts everything above the frequency."
+    },
+    "remove": "Remove {{name}}",
+    "freq": "Frequency",
+    "freqHint": "Cutoff / center frequency (logarithmic). You can type values like 2.5k.",
+    "q": "Q",
+    "qHint": "Resonance / bandwidth. 0.707 = flat (Butterworth); higher = narrower and more resonant.",
+    "qFixedHint": "With 24/48 dB/oct the filter uses Butterworth sections, so Q is fixed.",
+    "slope": "Slope",
+    "slopeHint": "Steepness of the filter: 12 dB/oct is gentle, 48 dB/oct is very steep.",
+    "slopeValue": "{{value}} dB/oct",
+    "gain": "Gain",
+    "gainHint": "Boost or cut of the shelf in dB."
+  },
+  "eq": {
+    "title": "Equalizer (16 bands)",
+    "description": "16-band graphic equalizer, ±18 dB per band. Click a fader to edit its Q. The colored area is the output spectrum.",
+    "preset": "Preset",
+    "presets": {
+      "flat": "Flat",
+      "bassBoost": "Bass boost",
+      "trebleBoost": "Treble boost",
+      "vocalPresence": "Vocal presence",
+      "loFi": "Lo-fi",
+      "telephone": "Telephone",
+      "custom": "Custom"
+    },
+    "curve": "Equalizer frequency response",
+    "bands": "Equalizer bands",
+    "bandGain": "Gain at {{freq}}",
+    "bandQ": "Q at {{freq}}",
+    "selectedBand": "Band {{freq}}",
+    "qHint": "Higher Q = narrower band.",
+    "gain": "Gain",
+    "q": "Q",
+    "resetBand": "Reset band {{freq}}"
+  },
+  "denoise": {
+    "title": "Noise reduction",
+    "description": "Removes steady background noise (hiss, hum, fans). Learn a noise profile from a noise-only selection for best results.",
+    "mode": "Algorithm",
+    "modes": {
+      "spectral": "Spectral gate",
+      "rnnoise": "RNNoise (voice)"
+    },
+    "modeHint": {
+      "spectral": "General purpose: works on any material, uses the noise profile and all parameters below.",
+      "rnnoise": "Neural network tuned for speech. Best for dialogue and voice-overs; Reduction controls the strength."
+    },
+    "reduction": "Reduction",
+    "reductionHint": "How much the noise is attenuated. Too much can sound watery.",
+    "sensitivity": "Sensitivity",
+    "sensitivityHint": "How far above the noise floor a sound must be to be kept. Higher removes more but may eat quiet details.",
+    "smoothing": "Frequency smoothing",
+    "smoothingHint": "Smooths the gain across neighbouring frequencies to avoid 'musical noise' artifacts.",
+    "attack": "Attack",
+    "release": "Release",
+    "profile": "Noise profile",
+    "profileHint": "Select a part that contains only noise on the timeline, then click Learn.",
+    "profileRange": "{{start}} – {{end}}",
+    "profileAuto": "Automatic (estimated)",
+    "learn": "Learn from selection",
+    "clearProfile": "Clear",
+    "needSelection": "Select a noise-only region on the timeline first."
+  },
+  "loop": {
+    "title": "Seamless loop",
+    "description": "Joins the end to the beginning with a crossfade so the sound loops without a click.",
+    "crossfade": "Crossfade",
+    "crossfadeHint": "Length of the overlap between the tail and the head. The output gets shorter by this amount.",
+    "curve": "Crossfade curve",
+    "curveHint": "Equal power keeps constant loudness for uncorrelated material (music, ambience); linear suits identical material.",
+    "region": "Loop region",
+    "regionHint": "Part of the mix used for the loop. Select a region on the timeline and click \"Use selection\".",
+    "whole": "Whole output",
+    "regionRange": "{{start}} – {{end}}",
+    "begin": "start",
+    "end": "end",
+    "fromSelection": "Use selection",
+    "useWhole": "Whole output",
+    "zeroCrossing": "Snap to zero crossings",
+    "zeroCrossingHint": "Moves the loop points to the nearest zero crossing to avoid clicks.",
+    "matchLoudness": "Match loudness",
+    "matchLoudnessHint": "Evens out the level of the start and end so the seam is not audible.",
+    "hint": "Tip: enable Loop playback in the transport bar to listen to the seam repeatedly."
+  },
+  "optimize": {
+    "presetsTitle": "Quick presets",
+    "presetsDescription": "One click sets format, sample rate, channels and quality for common game-audio uses.",
+    "presets": {
+      "sfxMobile": {
+        "name": "SFX mobile",
+        "detail": "OGG · 22.05 kHz · mono · q0.4 · trim silence"
+      },
+      "bgm": {
+        "name": "BGM / music",
+        "detail": "OGG · 44.1 kHz · stereo · q0.6"
+      },
+      "voice": {
+        "name": "Voice / dialogue",
+        "detail": "MP3 · 22.05 kHz · mono · 64 kbps"
+      },
+      "losslessMaster": {
+        "name": "Lossless master",
+        "detail": "FLAC · 48 kHz · 24-bit"
+      }
+    },
+    "outputTitle": "Output format & size",
+    "outputDescription": "These settings are used by Export. Lower sample rate, mono and lossy formats make files much smaller.",
+    "preview": "Preview with export settings",
+    "previewHint": "Plays and displays the audio exactly as it will be exported (resampled, downmixed, encoded).",
+    "sourceSize": "Source files",
+    "beforeSize": "Before (WAV 16-bit)",
+    "afterSize": "After (current settings)",
+    "estimating": "estimating…",
+    "noAudio": "Add audio to see size estimates."
+  },
+  "trimSilence": {
+    "title": "Trim silence",
+    "description": "Removes silence at the start and end of the output (smaller files, tighter SFX timing).",
+    "threshold": "Threshold",
+    "thresholdHint": "Anything quieter than this level counts as silence.",
+    "pad": "Padding",
+    "padHint": "Silence kept before the first and after the last sound."
+  }
+}

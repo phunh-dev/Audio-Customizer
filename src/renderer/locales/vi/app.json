@@ -1,0 +1,67 @@
+{
+  "name": "Audio Customizer",
+  "dismiss": "Đóng",
+  "tabs": {
+    "label": "Phiên làm việc",
+    "defaultName": "Phiên {{n}}",
+    "new": "Tab mới",
+    "close": "Đóng {{name}}",
+    "rename": "Đổi tên tab",
+    "sleeping": "Đang ngủ",
+    "sleepingHint": "Tab này đang ngủ để tiết kiệm bộ nhớ. Bấm để đánh thức.",
+    "loading": "Đang tải",
+    "waking": "Đang đánh thức tab và tải lại âm thanh..."
+  },
+  "toolbar": {
+    "openFiles": "Mở tệp",
+    "openFolder": "Mở thư mục",
+    "undo": "Hoàn tác",
+    "redo": "Làm lại",
+    "split": "Tách tại đầu phát",
+    "trim": "Cắt theo vùng chọn",
+    "deleteRegion": "Xóa vùng chọn (dồn lại)",
+    "arrange": "Ghép",
+    "arrangeHint": "Xếp các track nối tiếp nhau (ghép) với khoảng lặng hoặc crossfade",
+    "lightTheme": "Chuyển sang giao diện sáng",
+    "darkTheme": "Chuyển sang giao diện tối"
+  },
+  "language": {
+    "label": "Ngôn ngữ",
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt",
+    "short": {
+      "en": "EN",
+      "vi": "VI"
+    }
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "sleepMinutes": "Cho tab không dùng ngủ sau",
+    "sleepHint": "Tab không hoạt động sẽ giải phóng bộ nhớ âm thanh và tải lại khi bạn mở lại.",
+    "snap": "Bắt dính clip vào mép và đầu phát",
+    "colormap": "Màu phổ tần",
+    "colormapMagma": "Magma",
+    "colormapInferno": "Inferno"
+  },
+  "units": {
+    "min": "phút",
+    "ms": "ms",
+    "s": "s",
+    "db": "dB"
+  },
+  "arrange": {
+    "title": "Ghép các track",
+    "description": "Các track được đặt nối đuôi nhau theo thứ tự trong danh sách. Crossfade sẽ chồng các track kề nhau với fade tương ứng.",
+    "gap": "Khoảng lặng giữa",
+    "crossfade": "Crossfade",
+    "curve": "Đường cong fade",
+    "apply": "Ghép track"
+  },
+  "curves": {
+    "linear": "Tuyến tính",
+    "exponential": "Hàm mũ",
+    "logarithmic": "Logarit",
+    "sCurve": "Đường cong S",
+    "equalPower": "Công suất đều"
+  }
+}

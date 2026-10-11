@@ -1,0 +1,113 @@
+{
+  "title": "Xuất âm thanh",
+  "fields": {
+    "format": "Định dạng",
+    "sampleRate": "Tần số lấy mẫu",
+    "channels": "Số kênh",
+    "bitDepth": "Độ sâu bit",
+    "dither": "Dither",
+    "bitrateMode": "Chế độ bitrate",
+    "bitrate": "Bitrate",
+    "vbrQuality": "Chất lượng VBR",
+    "resampleQuality": "Chất lượng chuyển đổi tần số",
+    "fileName": "Tên file"
+  },
+  "hints": {
+    "format": "WAV/AIFF/FLAC là không nén mất dữ liệu; MP3/OGG là nén mất dữ liệu và nhỏ hơn nhiều.",
+    "sampleRate": "Số mẫu mỗi giây. Tần số thấp hơn cho file nhỏ hơn nhưng mất tần số cao (tần số tối đa = tần số lấy mẫu / 2).",
+    "channels": "Nguồn: giữ số kênh của dự án. Mono giảm một nửa dung lượng, lý tưởng cho SFX 3D/định vị.",
+    "bitDepth": "16-bit là chất lượng CD, đủ cho game; 24-bit cho bản master và chỉnh sửa tiếp.",
+    "dither": "Thêm nhiễu rất nhỏ khi giảm độ sâu bit để tránh méo lượng tử ở các âm nhỏ.",
+    "bitrateMode": "CBR: bitrate cố định (dung lượng dự đoán được). VBR: theo chất lượng, thường nhỏ hơn với cùng chất lượng.",
+    "bitrate": "Bitrate cao hơn = chất lượng tốt hơn và file lớn hơn. 128–192 kbps tốt cho nhạc, 64 kbps cho giọng nói.",
+    "vbrQuality": "0 = file nhỏ nhất, 1 = chất lượng tốt nhất.",
+    "resampleQuality": "Chất lượng chuyển đổi tần số lấy mẫu. Tốt nhất thì chậm hơn nhưng sạch nhất.",
+    "fileName": "Chỉ là gợi ý: bạn sẽ chọn thư mục và tên cuối cùng trong hộp thoại lưu.",
+    "askLocation": "Bạn sẽ chọn nơi lưu trước khi bất kỳ dữ liệu nào được ghi.",
+    "oggAbr": "Ở chế độ này OGG Vorbis dùng bitrate trung bình (ABR)."
+  },
+  "formats": {
+    "wav": "WAV",
+    "aiff": "AIFF",
+    "flac": "FLAC",
+    "mp3": "MP3",
+    "ogg": "OGG"
+  },
+  "formatHint": {
+    "wav": "Không nén, tương thích mọi nơi (lossless).",
+    "aiff": "Không nén, chuẩn của Apple (lossless).",
+    "flac": "Nén không mất dữ liệu, khoảng 50–60 % so với WAV.",
+    "mp3": "Nén mất dữ liệu, được hỗ trợ ở mọi nơi.",
+    "ogg": "Vorbis nén mất dữ liệu, rất hợp cho game (Unity, Godot, Unreal)."
+  },
+  "sampleRate": {
+    "keep": "Giữ nguyên ({{rate}})",
+    "keepHint": "Dùng tần số lấy mẫu của dự án (cao nhất trong các track)."
+  },
+  "sampleRateHint": {
+    "8000": "Chất lượng điện thoại, chỉ cho giọng nói",
+    "11025": "SFX lo-fi / phong cách retro",
+    "12000": "Giọng nói chất lượng thấp",
+    "16000": "Lời nói, chat thoại",
+    "22050": "Khuyên dùng cho SFX di động",
+    "24000": "Giọng nói, SFX đơn giản",
+    "32000": "Chất lượng radio FM",
+    "44100": "Khuyên dùng cho nhạc (chất lượng CD)",
+    "48000": "Khuyên dùng cho video / game engine",
+    "96000": "Master độ phân giải cao / lưu trữ"
+  },
+  "channels": {
+    "source": "Nguồn",
+    "mono": "Mono",
+    "stereo": "Stereo"
+  },
+  "bitDepth": {
+    "16": "16-bit",
+    "24": "24-bit",
+    "32": "32-bit",
+    "32f": "32-bit float"
+  },
+  "bitrateMode": {
+    "cbr": "CBR",
+    "vbr": "VBR"
+  },
+  "kbps": "{{value}} kbps",
+  "resampleQuality": {
+    "fast": "Nhanh",
+    "balanced": "Cân bằng",
+    "best": "Tốt nhất"
+  },
+  "validation": {
+    "bitDepth": "Độ sâu bit không được hỗ trợ ({{value}}). Hãy dùng 16, 24 hoặc 32.",
+    "vbrQuality": "Chất lượng VBR phải nằm trong khoảng 0 đến 1.",
+    "sampleRate": "Tần số lấy mẫu {{value}} Hz nằm ngoài phạm vi (4000–384000 Hz).",
+    "mp3SampleRate": "MP3 không hỗ trợ {{value}} Hz. Hãy chọn 8–48 kHz trong danh sách.",
+    "mp3Bitrate": "MP3 không hỗ trợ {{value}} kbps. Hãy chọn một bitrate tiêu chuẩn.",
+    "mp3Channels": "MP3 chỉ hỗ trợ tối đa 2 kênh.",
+    "oggBitrate": "Bitrate OGG {{value}} kbps nằm ngoài phạm vi (32–500 kbps)."
+  },
+  "estimate": {
+    "label": "Dung lượng ước tính",
+    "loading": "đang ước tính…",
+    "unavailable": "-"
+  },
+  "emptyProject": "Chưa có âm thanh để xuất. Hãy thêm file trước.",
+  "actions": {
+    "open": "Xuất",
+    "export": "Xuất…",
+    "cancel": "Hủy",
+    "close": "Đóng",
+    "done": "Xong",
+    "exportAgain": "Xuất file khác",
+    "tryAgain": "Thử lại"
+  },
+  "status": {
+    "exporting": "Đang xử lý và ghi file…",
+    "canceled": "Đã hủy xuất: không có gì được lưu.",
+    "success": "Xuất thành công",
+    "savedTo": "Đã lưu tại:",
+    "bytes": "{{size}} ({{bytes}} byte)",
+    "error": "Xuất thất bại",
+    "unknownError": "Đã xảy ra lỗi không mong muốn."
+  }
+}

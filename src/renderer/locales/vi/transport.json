@@ -1,0 +1,24 @@
+{
+  "title": "Điều khiển phát",
+  "play": "Phát",
+  "pause": "Tạm dừng",
+  "stop": "Dừng",
+  "space": "Phím cách",
+  "loop": "Phát lặp",
+  "stepBack": "Lùi một bước",
+  "stepForward": "Tiến một bước",
+  "stepUnit": "Bước",
+  "position": "Vị trí",
+  "duration": "Độ dài",
+  "sampleRateValue": "{{value}} Hz",
+  "units": {
+    "sample": "1 mẫu",
+    "ms1": "1 ms",
+    "ms10": "10 ms",
+    "ms100": "100 ms",
+    "s1": "1 giây",
+    "frame24": "1 khung hình @ 24 fps",
+    "frame30": "1 khung hình @ 30 fps",
+    "frame60": "1 khung hình @ 60 fps"
+  }
+}

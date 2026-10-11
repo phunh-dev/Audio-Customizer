@@ -1,0 +1,23 @@
+{
+  "title": "Dòng thời gian",
+  "spectrogram": "Phổ tần của kết quả cuối",
+  "masterWaveform": "Dạng sóng của kết quả cuối",
+  "master": "Tổng",
+  "finalResult": "Kết quả cuối",
+  "rendering": "Đang xử lý",
+  "noRender": "Phổ tần sẽ hiển thị ở đây sau khi xử lý",
+  "peak": "Mức đỉnh",
+  "peakValue": "Đỉnh {{value}} dB",
+  "loudness": "Độ to tích hợp",
+  "lufsValue": "{{value}} LUFS",
+  "seek": "Dòng thời gian: bấm hoặc kéo để tua",
+  "clip": "Clip {{name}}",
+  "dragHint": "Kéo để dịch clip theo thời gian (giữ Alt để tắt bắt dính)",
+  "zoomIn": "Phóng to (Ctrl + cuộn)",
+  "zoomOut": "Thu nhỏ (Ctrl + cuộn)",
+  "fit": "Vừa toàn bộ dự án",
+  "scroll": "Cuộn dòng thời gian",
+  "zoomValue": "{{value}} px/s",
+  "clippingHint": "Kết quả cuối vượt 0 dBFS và sẽ bị méo (clip). Hãy giảm gain hoặc bật limiter / chuẩn hoá (tab Âm lượng, Tổng).",
+  "lanesHint": "Kéo clip để dịch theo thời gian · bấm thước thời gian để tua · kéo ngang trên phổ để chọn vùng (cắt, xóa, loop, mẫu nhiễu)"
+}

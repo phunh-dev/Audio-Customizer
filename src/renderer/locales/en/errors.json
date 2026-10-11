@@ -1,0 +1,13 @@
+{
+  "ERR_FILE_NOT_FOUND": "File not found",
+  "ERR_UNSUPPORTED_FORMAT": "Unsupported audio format",
+  "ERR_DECODE_FAILED": "Could not decode the audio file",
+  "ERR_ENCODE_FAILED": "Could not encode the audio",
+  "ERR_INVALID_PARAM": "Invalid parameter",
+  "ERR_IO": "Could not read or write the file",
+  "ERR_NO_AUDIO_DEVICE": "No audio output device is available",
+  "ERR_SOURCE_NOT_LOADED": "The audio source is not loaded",
+  "ERR_SESSION_NOT_FOUND": "The working session was not found",
+  "ERR_EMPTY_PROJECT": "The project has no audible tracks",
+  "ERR_UNKNOWN": "Something went wrong"
+}

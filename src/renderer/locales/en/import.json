@@ -1,0 +1,11 @@
+{
+  "title": "Drop audio files or folders here",
+  "instructions": "Drag one or more files, or a whole folder, anywhere onto the window. Each tab is its own working session.",
+  "dropNow": "Release to add the audio files",
+  "supported": "Supported: {{formats}}",
+  "noSupportedFiles": "No supported audio files were found",
+  "tipDrag": "Drag clips on the lanes to mix",
+  "tipSpace": "Space plays / pauses",
+  "tipZoom": "Ctrl + wheel zooms the timeline",
+  "tipUndo": "Ctrl+Z undoes any change"
+}
